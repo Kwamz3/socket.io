@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import io from 'socket.io-client';
+import { useEffect } from 'react'
+import io from 'socket.io-client'
 import './App.css'
 
 function App() {
-  const socket = io("http://localhost:3000");
+  const socket = io("localhost:3000");
 
   function connectSocket(){
     socket.on("connection", (socket) => {
@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     connectSocket();
-  }, []);
+}, [])
 
   return (
     <>
