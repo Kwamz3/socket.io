@@ -1,24 +1,23 @@
-// import { useState } from 'react';
-import io from 'socket.io-client'
-import './App.css'
 import { useEffect } from 'react';
+import io from 'socket.io-client';
+import './App.css'
 
 function App() {
-  const socket = io('localhost:3000')
+  const socket = io("http://localhost:3000");
 
   function connectSocket(){
-    socket.on("conection", (socket) => {
-      console.log(socket)
-    })
+    socket.on("connection", (socket) => {
+      console.log(socket);
+    });
   }
 
   useEffect(() => {
     connectSocket();
-  });
+  }, []);
 
   return (
     <>
-        <h1>React Multiplayer Dashboard</h1>
+      <h1>React Multiplayer Dashboard</h1>
     </>
   );
 }
