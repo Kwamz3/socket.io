@@ -1,11 +1,11 @@
 
 
-export default function Button({props, sendScores}) {
+export default function Button({props, onClick}) {
   return (
     <div>
           <button
         className= 'send-scores'
-        onClick= {sendScores}
+        onClick= {onClick}
         props= {props}
         >{props}</button>
     </div>
