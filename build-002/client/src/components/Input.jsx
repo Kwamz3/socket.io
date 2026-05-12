@@ -7,7 +7,8 @@ export default function Input({name, placeholder, handleInput}) {
               name= {name}
               onChange={handleInput}
               className='input-field'
-              placeholder={placeholder} />
+              placeholder={placeholder}
+               />
     </div>
   )
 }

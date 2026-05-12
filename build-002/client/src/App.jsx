@@ -11,24 +11,25 @@ function App() {
   const socket = io("localhost:3000");
 
   function connectSocket(){
-    socket.on("connection", (socket) => {
-      console.log(socket);
+    socket.on("connect", (socket) => {
+      
+      socket.emit("scores", score)
     });
   }
-
+  
   function handleInput(event) {
     let { name, value } = event.target;
     let currentObj = { [name]: value };
-
+    
     setScores((prev) => ({
       ...prev, ...currentObj
     }));
-
+    
   }
   console.log(score);
   
   function sendScores() {
-    console.log(score)
+    socket.emit("scores", score)
   }
   
   useEffect(() => {
