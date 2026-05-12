@@ -11,8 +11,6 @@ const io = new Server(httpServer, {
 let playerScores = [];
 
 io.on("connection", (socket) => {
-    // console.log(socket)
-
     socket.on("scores", (scores) => {
         playerScores.push({...scores, id: socket.id});
         console.log(playerScores);
@@ -20,6 +18,8 @@ io.on("connection", (socket) => {
 
     socket.emit("playerScores", playerScores);
 });
+
+
 
 httpServer.listen(3000, () => {
     console.log('Server is connected!');

@@ -11,7 +11,7 @@ function App() {
   const socket = io("http://localhost:3000");
 
   function connectSocket(){
-    socket.on("connection", () => {
+    socket.on("connect", () => {
       console.log("socket connected", socket.id);
     });
   }
@@ -25,17 +25,18 @@ function App() {
     }));
     
   }
-  // console.log(score);
   
   function sendScores() {
-    console.log(score);
-    socket.emit("scores", score);
-
     socket.on("playerScores", (playerScores) => {
-      console.log(playerScores);
-    });
+      console.log(playerScores)
+    })
+
+    socket.emit("scores", score);
+    console.log(score)
   }
-  
+
+
+
   useEffect(() => {
     connectSocket();
   }, [])
