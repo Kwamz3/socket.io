@@ -12,8 +12,7 @@ function App() {
 
   function connectSocket(){
     socket.on("connect", (socket) => {
-      
-      socket.emit("scores", score)
+      console.log("Connected with socket id: ", socket.id);
     });
   }
   
