@@ -11,8 +11,8 @@ function App() {
   const socket = io("localhost:3000");
 
   function connectSocket(){
-    socket.on("connect", (socket) => {
-      console.log("Connected with socket id: ", socket.id);
+    socket.on("connect", () => {
+      console.log("Connected with socket id:", socket.id);
     });
   }
   
@@ -28,6 +28,7 @@ function App() {
   console.log(score);
   
   function sendScores() {
+    console.log(score)
     socket.emit("scores", score)
   }
   
