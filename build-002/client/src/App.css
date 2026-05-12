@@ -182,3 +182,22 @@
     border-right-color: var(--border);
   }
 }
+
+.input-field{
+  height: 2rem;
+  padding-left: 0.5rem;
+  outline: none;
+  width: 20rem;
+  margin: 0.5rem;
+}
+
+.header-text{
+    display: flex;
+    flex-direction: column;
+    margin-top: 16rem;
+}
+
+.send-scores{
+  margin-top: 1rem;
+  padding: 5px;
+}
