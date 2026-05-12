@@ -8,12 +8,11 @@ import Button from './components/Button';
 
 function App() {
   const [score, setScores] = useState({})
-  const socket = io("localhost:3000");
+  const socket = io("http://localhost:3000");
 
   function connectSocket(){
-    socket.on("connect", (socket) => {
-      
-      socket.emit("scores", score)
+    socket.on("connect", () => {
+      console.log("socket connected", socket.id);
     });
   }
   
@@ -29,12 +28,13 @@ function App() {
   console.log(score);
   
   function sendScores() {
+    console.log(score)
     socket.emit("scores", score)
   }
   
   useEffect(() => {
     connectSocket();
-}, [])
+  }, [])
 
   return (
     <>
