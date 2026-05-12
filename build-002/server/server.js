@@ -18,7 +18,7 @@ io.on("connection", (socket) => {
         console.log(playerScores);
     })
 
-        socket.emit("playerScores", playerScores);
+    socket.emit("playerScores", playerScores);
 });
 
 httpServer.listen(3000, () => {
