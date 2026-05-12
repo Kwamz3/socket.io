@@ -8,11 +8,11 @@ import Button from './components/Button';
 
 function App() {
   const [score, setScores] = useState({})
-  const socket = io("localhost:3000");
+  const socket = io("http://localhost:3000");
 
   function connectSocket(){
     socket.on("connect", () => {
-      console.log("Connected with socket id:", socket.id);
+      console.log("socket connected", socket.id);
     });
   }
   
@@ -38,7 +38,7 @@ function App() {
   
   useEffect(() => {
     connectSocket();
-}, [])
+  }, [])
 
   return (
     <>
