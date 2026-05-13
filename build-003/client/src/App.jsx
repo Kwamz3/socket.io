@@ -1,5 +1,5 @@
 import { useState } from "react";
-import io from 'socket.io-client'
+import io from "socket.io-client";
 import Header from "./components/Header";
 import Input from "./components/Input";
 import Button from "./components/Button";
@@ -22,11 +22,11 @@ function App() {
   };
 
   const handleSubmit = () => {
-    socket.emit("data", formInputs)
-
+    socket.emit("data", formInputs);
+    
     socket.on("crudData", (crudData) => {
       console.log(crudData);
-    })
+    });
   };
 
   return (
