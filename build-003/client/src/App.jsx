@@ -7,9 +7,9 @@ import { useState } from "react";
 function App() {
   const [formInputs, setFormInputs] = useState({});
   const handleInput = (event) => {
-    const { info, value } = event.target;
+    const { name, value } = event.target;
 
-    let eventObj = { [info]: value };
+    let eventObj = { [name]: value };
 
     setFormInputs((prev) => ({
       ...prev,
@@ -29,19 +29,19 @@ function App() {
         <Input
           onChange={handleInput}
           placeholder={"Enter your name"}
-          info={"name"}
-        ></Input>
+          name={"name"}
+        />
         <Input
           onChange={handleInput}
           placeholder={"Enter your age"}
-          info={"age"}
-        ></Input>
+          name={"age"}
+        />
         <Input
           onChange={handleInput}
           placeholder={"Enter your phone number"}
-          info={"phoneNumber"}
-        ></Input>
-        <Button onClick={handleSubmit} title={"Add Data"}></Button>
+          name={"phoneNumber"}
+        />
+        <Button onClick={handleSubmit} title={"Add Data"} />
       </div>
     </>
   );

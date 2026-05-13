@@ -1,17 +1,11 @@
-export default function Input({
-name,
-  age,
-  phoneNumber,
-  placeholder,
-  handleInput,
-}) {
+export default function Input({ name, placeholder, onChange }) {
   return (
     <div>
       <input
         className="input-field"
-        info={name, age, phoneNumber}
+        name={name}
         placeholder={placeholder}
-        handleInput={handleInput}
+        onChange={onChange}
       />
     </div>
   );
