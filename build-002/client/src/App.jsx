@@ -8,6 +8,7 @@ import Button from './components/Button';
 
 function App() {
   const [score, setScores] = useState({})
+  const [scores, setPlayerScores] = useState([])
   const socket = io("http://localhost:3000");
 
   function connectSocket(){
@@ -30,7 +31,7 @@ function App() {
     socket.emit("scores", score);
 
     socket.on("playerScores", (playerScores) => {
-      console.log(playerScores);
+      setPlayerScores(playerScores);
     })
   }
 
@@ -51,7 +52,9 @@ function App() {
         handleInput={handleInput}></Input>
       
       <Button props='Publish Scores'
-        onClick= {sendScores}></Button>
+        onClick={sendScores}></Button>
+      
+      {scores.map}
     </>
   );
 }
