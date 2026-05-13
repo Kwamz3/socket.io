@@ -1,10 +1,13 @@
+import { useState } from "react";
+import io from 'socket.io-client'
 import Header from "./components/Header";
 import Input from "./components/Input";
 import Button from "./components/Button";
 import "./App.css";
-import { useState } from "react";
 
 function App() {
+  const socket = io('localhost:3000');
+
   const [formInputs, setFormInputs] = useState({});
   const handleInput = (event) => {
     const { name, value } = event.target;
