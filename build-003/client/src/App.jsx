@@ -24,9 +24,9 @@ function App() {
   const handleSubmit = () => {
     socket.emit("data", formInputs);
 
-    socket.on("crudData", (response) => {
-      console.log(response);
-    });
+      socket.on("crudData", (response) => {
+        console.log(response);
+      });
   };
 
   return (

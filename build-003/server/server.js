@@ -16,10 +16,11 @@ io.on("connection", (socket) => {
     socket.on("data", (formInputs) => {
         crudData.push(formInputs);
         console.log(crudData);
-    })
+    });
 
-    socket.emit("crudData", crudData)
+    socket.emit("crudData", crudData);
 })
+
 
 httpServer.listen(PORT, () => {
     console.log(`Server is running on port:`, `http://localhost:${PORT}`)
