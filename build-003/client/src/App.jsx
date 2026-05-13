@@ -6,9 +6,9 @@ import Button from "./components/Button";
 import "./App.css";
 
 function App() {
-  const socket = io('localhost:3000');
-
   const [formInputs, setFormInputs] = useState({});
+  const socket = io("localhost:3000");
+
   const handleInput = (event) => {
     const { name, value } = event.target;
 
@@ -22,6 +22,8 @@ function App() {
 
   const handleSubmit = () => {
     console.log(formInputs);
+
+    socket.emit("data", formInputs)
   };
 
   return (

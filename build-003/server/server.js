@@ -12,7 +12,11 @@ const io = new Server(httpServer, {
 let crudData = [];
 
 io.on("connection", (socket) => {
-    console.log(socket.id)
+
+    socket.on("data", (formInputs) => {
+        crudData.push(formInputs)
+        console.log(crudData)
+    })
 })
 
 httpServer.listen(PORT, () => {
