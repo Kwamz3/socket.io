@@ -4,11 +4,12 @@ import './App.css'
 import Input from './components/Input';
 import Header from './components/Header';
 import Button from './components/Button';
+import Table from './components/Table';
 
 
 function App() {
   const [score, setScores] = useState({})
-  const [scores, setPlayerScores] = useState([])
+  const [displayScores, setPlayerScores] = useState([])
   const socket = io("http://localhost:3000");
 
   function connectSocket(){
@@ -54,7 +55,7 @@ function App() {
       <Button props='Publish Scores'
         onClick={sendScores}></Button>
       
-      {scores.map}
+      <Table rows={displayScores}></Table>
     </>
   );
 }
