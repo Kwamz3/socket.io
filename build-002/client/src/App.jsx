@@ -4,15 +4,17 @@ import './App.css'
 import Input from './components/Input';
 import Header from './components/Header';
 import Button from './components/Button';
+import Table from './components/Table';
 
 
 function App() {
   const [score, setScores] = useState({})
-  const socket = io("localhost:3000");
+  const [displayScores, setPlayerScores] = useState([])
+  const socket = io("http://localhost:3000");
 
   function connectSocket(){
     socket.on("connect", () => {
-      console.log("Connected with socket id:", socket.id);
+      console.log("socket connected", socket.id);
     });
   }
   
@@ -25,20 +27,18 @@ function App() {
     }));
     
   }
-  // console.log(score);
-  
+
   function sendScores() {
-    console.log(score);
     socket.emit("scores", score);
 
     socket.on("playerScores", (playerScores) => {
-        console.log(playerScores);
+      setPlayerScores(playerScores);
     })
   }
-  
+
   useEffect(() => {
     connectSocket();
-}, [])
+  }, [])
 
   return (
     <>
@@ -53,7 +53,9 @@ function App() {
         handleInput={handleInput}></Input>
       
       <Button props='Publish Scores'
-        onClick= {sendScores}></Button>
+        onClick={sendScores}></Button>
+      
+      <Table rows={displayScores}></Table>
     </>
   );
 }

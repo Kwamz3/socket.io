@@ -1,0 +1,24 @@
+{
+  "name": "socket.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kwamz3/socket.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Kwamz3/socket.io/issues"
+  },
+  "homepage": "https://github.com/Kwamz3/socket.io#readme",
+  "dependencies": {
+    "socket.io": "^4.8.3"
+  }
+}
