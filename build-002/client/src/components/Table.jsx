@@ -1,23 +1,31 @@
-import scores from "../App";
 
-export default function Table({ name, position, score}) {
+
+export default function Table({ rows }) {
   return (
     <div>
-      <table>
-        <th>
+      <table className='score-table'>
+        <thead>
           <tr>
-            <td>{position}</td>
-            <td>{name}</td>
-            <td>{score}</td>
+            <th>#</th>
+            <th>Name</th>
+            <th>Score</th>
           </tr>
-        </th>
-        {scores.map((scores) => {
-          <tr>
-            <td>{}</td>
-            <td>{scores?.score}</td>
-            <td>{scores?.score}</td>
-          </tr>
-        })}
+        </thead>
+        <tbody>
+          {rows.lenght === 0 ? (
+            <tr>
+              <td colSpan="3">No Scores yet</td>
+            </tr>
+          ) : (
+            rows.map((item, index) => {
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{item.name}</td>
+                <td>{item.score}</td>
+              </tr>;
+            })
+          )}
+        </tbody>
       </table>
     </div>
   );

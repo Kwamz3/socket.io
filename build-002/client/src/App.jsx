@@ -9,7 +9,7 @@ import Table from './components/Table';
 
 function App() {
   const [score, setScores] = useState({})
-  const [scores, setPlayerScores] = useState([])
+  const [displayScores, setPlayerScores] = useState([])
   const socket = io("http://localhost:3000");
 
   function connectSocket(){
@@ -55,11 +55,7 @@ function App() {
       <Button props='Publish Scores'
         onClick={sendScores}></Button>
       
-      <Table position='1'
-        name='Name'
-        score='Score'
-        score
-      ></Table>
+      <Table rows={displayScores}></Table>
     </>
   );
 }

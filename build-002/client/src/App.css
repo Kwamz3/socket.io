@@ -194,10 +194,28 @@
 .header-text{
     display: flex;
     flex-direction: column;
-    margin-top: 16rem;
+    margin-top: 5rem;
 }
 
 .send-scores{
   margin-top: 1rem;
   padding: 5px;
+}
+
+table{
+  font-family: Arial, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4rem;
+}
+
+td,
+th{
+  border: 1px solid white;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){
+  background-color: white;
 }
