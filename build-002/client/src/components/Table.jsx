@@ -12,7 +12,7 @@ export default function Table({ rows }) {
           </tr>
         </thead>
         <tbody>
-          {rows.lenght === 0 ? (
+          {rows?.lenght === 0 ? (
             <tr>
               <td colSpan="3">No Scores yet</td>
             </tr>
