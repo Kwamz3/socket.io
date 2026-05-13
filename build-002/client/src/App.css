@@ -207,6 +207,7 @@ table{
   width: 100%;
   border-collapse: collapse;
   margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 td,
@@ -217,5 +218,5 @@ th{
 }
 
 tr:nth-child(even){
-  background-color: white;
+  background-color: rgb(0, 75, 119);
 }

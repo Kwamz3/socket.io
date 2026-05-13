@@ -11,8 +11,8 @@ export default function Table({ rows }) {
             <th>Score</th>
           </tr>
         </thead>
-        <tbody>
-          {rows?.lenght === 0 ? (
+        <tbody className='no-scores-yet'>
+          {rows?.length === 0 ? (
             <tr>
               <td colspan="3">No Scores yet</td>
             </tr>
