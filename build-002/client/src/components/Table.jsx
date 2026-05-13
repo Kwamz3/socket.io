@@ -17,7 +17,7 @@ export default function Table({ rows }) {
               <td colspan="3">No Scores yet</td>
             </tr>
           ) : (
-            rows.map((item, index) => (
+            rows?.map((item, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
