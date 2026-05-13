@@ -7,6 +7,7 @@ import "./App.css";
 
 function App() {
   const [formInputs, setFormInputs] = useState({});
+  const [crudData, setCrudData] = useState([]);
   const socket = io("localhost:3000");
 
   const handleInput = (event) => {
@@ -21,9 +22,11 @@ function App() {
   };
 
   const handleSubmit = () => {
-    console.log(formInputs);
-
     socket.emit("data", formInputs)
+
+    socket.on("crudData", (crudData) => {
+      console.log(crudData);
+    })
   };
 
   return (

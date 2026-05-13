@@ -14,9 +14,11 @@ let crudData = [];
 io.on("connection", (socket) => {
 
     socket.on("data", (formInputs) => {
-        crudData.push(formInputs)
-        console.log(crudData)
+        crudData.push(formInputs);
+        console.log(crudData);
     })
+
+    socket.emit("crudData", crudData)
 })
 
 httpServer.listen(PORT, () => {
