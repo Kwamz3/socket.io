@@ -28,6 +28,10 @@ function App() {
 
   function sendScores() {
     socket.emit("scores", score);
+
+    socket.on("playerScores", (playerScores) => {
+      console.log(playerScores);
+    })
   }
 
   useEffect(() => {
