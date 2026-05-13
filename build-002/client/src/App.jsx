@@ -4,6 +4,7 @@ import './App.css'
 import Input from './components/Input';
 import Header from './components/Header';
 import Button from './components/Button';
+import Table from './components/Table';
 
 
 function App() {
@@ -54,7 +55,11 @@ function App() {
       <Button props='Publish Scores'
         onClick={sendScores}></Button>
       
-      {scores.map}
+      <Table position='1'
+        name='Name'
+        score='Score'
+        score
+      ></Table>
     </>
   );
 }
