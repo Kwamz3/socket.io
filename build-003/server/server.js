@@ -18,7 +18,7 @@ io.on("connection", (socket) => {
         console.log(crudData);
     });
 
-    socket.emit("crudData", crudData);
+        socket.emit("crudData", crudData);
 })
 
 
