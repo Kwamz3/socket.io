@@ -22,7 +22,12 @@ function App() {
   };
 
   const handleSubmit = () => {
+    socket.on("crudData", (response) => {
+      console.log(response);
+    })
+    
     socket.emit("data", formInputs);
+
   };
 
   return (
